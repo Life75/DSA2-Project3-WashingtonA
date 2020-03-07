@@ -10,8 +10,10 @@ class CityWeight
     double cityWeight =-1;
 
     public:
-    double getCityWeight() {return cityWeight;}
-    void setCityWeight(double cityWeight) {this->cityWeight = cityWeight;}
+    CityWeight();
+    CityWeight(double cityWeight);
+    double getCityWeight();
+    void setCityWeight(double cityWeight);
     
 
 };
