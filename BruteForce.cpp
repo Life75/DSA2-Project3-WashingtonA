@@ -24,6 +24,7 @@ int BruteForce::factorial(int num)
 void BruteForce::permutation(int n, int arr[], int size)
 {
     int m, k, p, q, i;
+    //std::cout << p;
         optimalCheck(arr,size);
         //have a function within that depends and goes through this code and checks the weights
         for (i = 1; i < n; i++) {
