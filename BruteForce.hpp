@@ -8,12 +8,12 @@ class BruteForce
 {
     private:
     double optimal = -1;  
-    CityWeight* cw[19][19];  
+    CityWeight* cw[20][20];  
     std::queue<int> elite;
    
 
     public:
-    BruteForce(CityWeight* cw[][19]);
+    BruteForce(CityWeight* cw[][20]);
     int factorial(int num);
     void permutation(int n, int arr[], int size);
     void optimalCheck(int arr[], int size);

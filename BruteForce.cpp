@@ -2,10 +2,10 @@
 #include "CityWeight.hpp"
 #include <queue>
 
-BruteForce::BruteForce(CityWeight* cw[][19])
+BruteForce::BruteForce(CityWeight* cw[][20])
 {
-    for(int i =0; i < 19; i++)
-        for(int j=0; j < 19; j++)
+    for(int i =0; i < 20; i++)
+        for(int j=0; j < 20; j++)
         {
             this->cw[i][j] = cw[i][j];
         }

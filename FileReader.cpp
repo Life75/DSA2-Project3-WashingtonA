@@ -1,13 +1,13 @@
 #include "FileReader.hpp"
 
-void FileReader::objectMaker(std::string fileName,CityWeight* arr[19][19])
+void FileReader::objectMaker(std::string fileName,CityWeight* arr[20][20])
 {
     std::fstream file;
     std::queue<double> holder;
     file.open(fileName.c_str());
     double weight =-1;
-    int row =19;
-    int col =19;
+    int row =20;
+    int col =20;
     if(fileName == "distances.txt")
     {
         while(file >> weight)

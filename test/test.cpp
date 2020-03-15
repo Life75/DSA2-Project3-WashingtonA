@@ -16,6 +16,8 @@
 
 #include "../Mutation.hpp"
 
+#include "../MutationRemastered.hpp"
+
 class TestClass {
     void permutation(int n, int arr[], int size) {
         int m, k, p, q, i;
@@ -56,10 +58,10 @@ TEST_CASE("CityWeight Class") {
 TEST_CASE("FileReader Class")
 {
     FileReader reader;
-    CityWeight* cw[19][19];
-    for(int i =0; i < 19; i++)
+    CityWeight* cw[20][20];
+    for(int i =0; i < 20; i++)
     {
-        for(int j =0; j < 19; j++)
+        for(int j =0; j < 20; j++)
         {
             cw[i][j] = new CityWeight();
         }
@@ -75,10 +77,10 @@ TEST_CASE("BruteForce Class")
     
     FileReader reader;
     std::queue<int> elite;
-    CityWeight* cw[19][19];
-    for(int i =0; i < 19; i++)
+    CityWeight* cw[20][20];
+    for(int i =0; i < 20; i++)
     {
-        for(int j =0; j < 19; j++)
+        for(int j =0; j < 20; j++)
         {
             cw[i][j] = new CityWeight();
         }
@@ -86,15 +88,16 @@ TEST_CASE("BruteForce Class")
 
     reader.objectMaker("distances.txt",cw);
     BruteForce* force = new BruteForce(cw);
-    int size = 10;
+    int size = 5;
     int factorial =0;
-    int arr[]  = {1, 2, 3,4,5,6,7,8,9,10};
+    int arr[]  = {1, 2, 3, 4, 5 };
     
     factorial = force->factorial(size);
     //REQUIRE(factorial == 3628800);
 
     force->permutation(factorial, arr , size);
     elite = force->getMostOptimalRoute();
+    std::cout << "Most Optimal" << "\n";
     std::cout << force->getMostOptimalTime() << std::endl;
 /*   
     while(!elite.empty())
@@ -115,7 +118,7 @@ TEST_CASE("BruteForce Class")
     }*/
 }
 
-
+/*
 TEST_CASE("Mutation Class")
 {
     FileReader reader;
@@ -132,9 +135,9 @@ TEST_CASE("Mutation Class")
     Mutation* mute = new Mutation(cityW);
     reader.objectMaker("distances.txt",cityW);
 
-    int size = 10;
+    int size = 15;
     int randomNum =0;
-    int arr[]  = {1, 2, 3, 4,5,6,7,8,9,10};
+    int arr[]  = {1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15};
     
   
     int factorial = mute->factorial(size);
@@ -145,4 +148,40 @@ TEST_CASE("Mutation Class")
     
 
 
+}
+*/
+
+
+TEST_CASE("MutationRemastered Class")
+{
+    FileReader reader;
+    int generations = 3;
+    int tours = 3; 
+    int size = 5;
+    double percentageOfMutations = 50;
+
+    CityWeight* cw[20][20];
+    for(int i=0; i < 20; i++)
+    {
+        for(int j=0; j < 20; j++)
+        {
+            cw[i][j] = new CityWeight();
+        }
+    }
+    //works
+    /*
+    int arr[size];
+    for(int i=0; i < size; i++)
+        {
+            arr[i] = i+1;
+        }
+    */
+    int arr[size] = {1, 2, 3, 4, 5};
+    reader.objectMaker("distances.txt",cw);
+    MutationRemastered* mute = new MutationRemastered(tours, generations, percentageOfMutations, size, cw);
+    
+    mute->Generations(arr);
+    std::cout << "Genetic alg" << std::endl;
+    std::cout << mute->getEliteOneWeight() << std::endl;
+    std::cout << mute->getEliteTwoWeight() << std::endl;
 }
