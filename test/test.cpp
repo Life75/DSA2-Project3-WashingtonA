@@ -14,8 +14,6 @@
 
 #include "../BruteForce.hpp"
 
-#include "../Mutation.hpp"
-
 #include "../MutationRemastered.hpp"
 
 #include "../UI.hpp"

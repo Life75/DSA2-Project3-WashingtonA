@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -g -std=c++11 -Wall -ftest-coverage -fprofile-arcs
 
 SRCS = $(wildcard *.hpp)
-OBJECTS = CityWeight.o FileReader.o BruteForce.o Mutation.o MutationRemastered.o UI.o $(SRCS:%.hpp=%.o) 
+OBJECTS = CityWeight.o FileReader.o BruteForce.o MutationRemastered.o UI.o $(SRCS:%.hpp=%.o) 
 
 main: $(OBJECTS) main.o
 	$(CXX) $(CXXFLAGS) -o $@ $^

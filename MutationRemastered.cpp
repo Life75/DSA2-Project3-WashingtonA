@@ -31,8 +31,6 @@ int MutationRemastered::RandomNum()
 void MutationRemastered::Tours(int arr[])
 {
     int m, k, p, q, i;
-    //std::cout << p;
-        //optimalCheck(arr,size);
         //have a function within that depends and goes through this code and checks the weights
         for (i = 1; i < tours * generations; i++) {
             m = size - 2;
@@ -62,7 +60,7 @@ void MutationRemastered::Tours(int arr[])
 void MutationRemastered::optimalCheckEliteOne(int arr[])
 {
     double totalWeightHere = optimalCheck(arr);
-    //std::cout << "ho";
+
     if(totalWeightHere < optimalOne || optimalOne == -1)
     {
         if(!eliteOne.empty())
@@ -83,7 +81,7 @@ void MutationRemastered::optimalCheckEliteOne(int arr[])
 void MutationRemastered::optimalCheckEliteTwo(int arr[])
 {
     double totalWeightHere = optimalCheck(arr);
-    //std::cout << "hey";
+   
     if(totalWeightHere < optimalTwo || optimalTwo == -1)
     {
         if(!eliteTwo.empty())
@@ -115,20 +113,20 @@ double MutationRemastered::optimalCheck(int arr[])
         {
             
             totalWeightHere += this->cw[0][index]->getCityWeight();
-           // std::cout << 0 << "," << index << " | "; 
+           
         }
         else 
         {
             if(i != size-1 )
             {
                 totalWeightHere += cw[index][indexPlus]->getCityWeight();
-               // std::cout << index << "," << indexPlus << " | "; 
+        
             }
 
             else 
             {
                totalWeightHere += cw[index][0]->getCityWeight();
-               //std::cout << index << "," << 0; 
+              
             }
         }   
     }
@@ -187,7 +185,7 @@ void MutationRemastered::Generations(int arr[])
         optimalCheckEliteOne(arr);
         optimalCheckEliteTwo(arr);     
     }
-//get a seg fault when putting tours intom the generations pool so I will mutate with the elites.
+    
     Tours(arr);
     for(int i=0; i < generations; i++)
     {

@@ -82,8 +82,6 @@ void UI::BruteForceData()
     auto stop = high_resolution_clock::now(); 
     auto duration = duration_cast<microseconds>(stop - start);
 
-
-    //elite = force->getMostOptimalRoute();
     std::cout << "Brute force optimal cost: " << force->getMostOptimalTime() << std::endl;
     std::cout << "Time taken for brute force: " << duration.count() << " microseconds" << std::endl;
 }
