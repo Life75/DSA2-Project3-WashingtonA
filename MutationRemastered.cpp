@@ -34,7 +34,7 @@ void MutationRemastered::Tours(int arr[])
     //std::cout << p;
         //optimalCheck(arr,size);
         //have a function within that depends and goes through this code and checks the weights
-        for (i = 1; i < tours; i++) {
+        for (i = 1; i < tours * generations; i++) {
             m = size - 2;
 
             while (arr[m] > arr[m + 1]) {
@@ -141,6 +141,7 @@ void MutationRemastered::Mutate()
     int eliteTwoArr[size];
     double mutationWeightOne =0;
     double mutationWeightTwo =0;
+    //factors in the certain percentage of the mutation(s)
     int mutations = percentageOfMutations * size;
 
     for(int i=0; i < size; i++)
