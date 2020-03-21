@@ -35,10 +35,11 @@ void UI::GetPrompt()
     std::cin >> generations;
     std::cout << "Please enter percentage number of the number of mutations: ";
     std::cin >> percentageOfMutations;
+    std::cout << "\n";
 
     std::cout << "Number of cities: " << size << std::endl;    
     BruteForceData();
-    MutationRemasteredData();
+    MutationRemasteredData();    
     int percent =  mute->getEliteOneWeight()/force->getMostOptimalTime() * 100;
     std::cout << "Percentage of optimal produced by GA elite one: " << percent << "%" << std::endl;
 

@@ -1,0 +1,43 @@
+Austyn Washington
+Data Structures and Algorithms 2
+Project 3
+User's Manual 
+
+Setup and Compilation
+1. Download and unzip the submission from eLearning on a Linux box in the multi-platform lab.
+2. The submission includes:
+	-BruteForce.cpp/hpp
+	-CityWeight.cpp/hpp
+	-FileReader.cpp/hpp
+	-Makefile
+	-MutationRemastered.cpp/hpp
+	-UI.cpp/hpp
+	-distances.txt
+	-main.cpp
+	-UserManual.txt (this file)
+	-WashingtonA_ResultsTable.xcl
+	-WashingtonA_Project3_UML.pdf
+
+3. Environment: This program has been tested in the multi-platform lab and will run there.
+
+4.Compiling. This program includes a Makefile.At the command line in Linux, type make main.
+
+Running the program: Make sure that "distances.txt" is within the folder and in the same folder with the executable ./main
+
+User input: User interaction within asking for amount of cities, tours, generations, and percentage number of mutations to mutate.
+
+Output: All output goes to the console. Output will be similar to this: 
+
+Please enter amount of cities: 
+Please enter amount of tours: 
+Please enter amount of generations: 
+Please enter percentage number of the number of mutations: 
+
+Number of cities: 
+Brute force optimal cost: 
+Time taken for brute force: 
+Cost from GA elite one: 
+Cost from GA elite two: 
+Genetic Algorithim Time: 
+Percentage of optimal produced by GA elite one: 
+Percentage of optimal produced by GA elite two: 
